@@ -30,7 +30,10 @@ import logging
 import os
 import pathlib
 import sys
-import urllib.parse
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 from itertools import islice
 
 import dateutil.parser
